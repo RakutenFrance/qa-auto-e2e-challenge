@@ -1,14 +1,24 @@
-const { test, expect } = require('@playwright/test');
-const LoginPage = require('../pages/LoginPage');
+import { test, expect } from '@playwright/test';
+import LoginPage from '../pages/LoginPage.js';
+import { users } from '../data/users.js';
+import { fr } from '../data/i18n/fr.js';
 
-test.describe('Login Tests', () => {
-  test('should login successfully with valid credentials', async ({ page }) => {
+test.describe('Rakuten Login Tests', () => {
+  test('should navigate to Rakuten connect page and verify user identifier input is visible', async ({ page }) => {
     const loginPage = new LoginPage(page);
+    await loginPage.open();
 
-    await loginPage.navigate();
-    await loginPage.login('tomsmith', 'SuperSecretPassword!');
+    await expect(loginPage.usernameInput).toBeVisible();
+  });
 
-    expect(await loginPage.isLoginSuccessful()).toBeTruthy();
-    expect(page.url()).toContain('/secure');
+  test('should show error message with invalid credentials', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.open();
+
+    await loginPage.login(users.testUser.email, users.testUser.password);
+
+    const errorMessage = await loginPage.getErrorMessage();
+    await expect(errorMessage).toBeVisible();
+    await expect(errorMessage).toContainText(fr.errors.invalidCredentials);
   });
 });

@@ -1,6 +1,6 @@
-const { defineConfig, devices } = require('@playwright/test');
+import { defineConfig, devices } from '@playwright/test';
 
-module.exports = defineConfig({
+export default defineConfig({
   testDir: './tests',
   timeout: 30000,
   expect: {
@@ -12,9 +12,11 @@ module.exports = defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://the-internet.herokuapp.com',
+    baseURL: 'https://fr.shopping.rakuten.com',
+    headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+    ignoreHTTPSErrors: true,
   },
   projects: [
     {
