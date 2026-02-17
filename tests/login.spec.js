@@ -4,7 +4,7 @@ import { users } from '../data/users.js';
 import { en } from '../data/i18n/en.js';
 
 test.describe('Rakuten Login Tests', () => {
-  test('should navigate to Rakuten connect page and verify user identifier input is visible', async ({ page }) => {
+  test('should navigate to connect page and verify user identifier input is visible', async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.open();
 
