@@ -1,9 +1,9 @@
 // Locator constants
-const USERNAME_INPUT = '[data-qa="user_identifier"]';
-const PASSWORD_INPUT = '[data-qa="user_password"]';
-const CONNECT_BUTTON = '[data-qa="btn_login"]';
-const ERROR_MESSAGE = '.error-message';
-const CONNECT_URL = '/connect';
+const USERNAME_INPUT = '[name="username"]';
+const PASSWORD_INPUT = '[name="password"]';
+const CONNECT_BUTTON = '[type="submit"]';
+const ERROR_MESSAGE = '[id="flash"]';
+const CONNECT_URL = '/login';
 
 class LoginPage {
   constructor(page) {

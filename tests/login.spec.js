@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import LoginPage from '../pages/LoginPage.js';
 import { users } from '../data/users.js';
-import { fr } from '../data/i18n/fr.js';
+import { en } from '../data/i18n/en.js';
 
 test.describe('Rakuten Login Tests', () => {
   test('should navigate to Rakuten connect page and verify user identifier input is visible', async ({ page }) => {
@@ -19,6 +19,6 @@ test.describe('Rakuten Login Tests', () => {
 
     const errorMessage = await loginPage.getErrorMessage();
     await expect(errorMessage).toBeVisible();
-    await expect(errorMessage).toContainText(fr.errors.invalidCredentials);
+    await expect(errorMessage).toContainText(en.errors.invalidCredentials);
   });
 });

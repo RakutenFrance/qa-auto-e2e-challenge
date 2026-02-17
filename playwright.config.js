@@ -12,8 +12,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://fr.shopping.rakuten.com',
-    headless: true,
+    baseURL: 'https://the-internet.herokuapp.com',
+    headless: false,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     ignoreHTTPSErrors: true,
