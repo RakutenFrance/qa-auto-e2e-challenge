@@ -1,6 +1,6 @@
 export const users = {
   testUser: {
     email: 'rafiktest1@yopmail.com',
-    password: 'Rakuten111111'
+    password: 'PassW0rd123'
   }
 };
