@@ -4,3 +4,6 @@ playwright-report/
 playwright/.cache/
 .idea/
 install-browsers.js
+
+# Fichiers d'entretien (confidentiel)
+REPONSES_ENTRETIEN.md
