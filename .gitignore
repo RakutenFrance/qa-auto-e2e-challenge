@@ -6,4 +6,5 @@ playwright/.cache/
 install-browsers.js
 
 # Fichiers d'entretien (confidentiel)
+EXERCICES_ENTRETIEN.md
 REPONSES_ENTRETIEN.md
